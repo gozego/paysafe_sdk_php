@@ -207,8 +207,8 @@ class PaysafeApiClient
                   'Content-Type: application/json; charset=utf-8'
              ),
              CURLOPT_RETURNTRANSFER => true,
-             CURLOPT_SSL_VERIFYPEER => false,
-             CURLOPT_SSL_VERIFYHOST => 0,
+             CURLOPT_SSL_VERIFYPEER => true,
+             CURLOPT_SSL_VERIFYHOST => 2,
         );
         if(($cert = static::getCACertPath())) {
             $opts[CURLOPT_CAINFO] = $cert;
